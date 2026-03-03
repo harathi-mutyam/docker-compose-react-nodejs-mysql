@@ -21,10 +21,13 @@ sudo apt install -y docker-compose
 
 ubuntu@ip-172-31-41-181:~$
 docker --version
-Docker version 29.2.1, build a5c7197
+
+
+output will be : Docker version 29.2.1, build a5c7197
 
 docker compose version
-docker Compose version v5.1.0
+
+output will be docker Compose version v5.1.0
 
 git clone https://github.com/harathi-mutyam/docker-compose-react-nodejs-mysql.git
 ls
