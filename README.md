@@ -19,10 +19,13 @@ newgrp docker
 # Install Docker Compose
 sudo apt install -y docker-compose
 
-ubuntu@ip-172-31-41-181:~$ docker --version
+ubuntu@ip-172-31-41-181:~$
+docker --version
 Docker version 29.2.1, build a5c7197
-ubuntu@ip-172-31-41-181:~$ docker compose version
+
+docker compose version
 docker Compose version v5.1.0
+
 git clone https://github.com/harathi-mutyam/docker-compose-react-nodejs-mysql.git
 ls
 cd docker-compose-react-nodejs-mysql
