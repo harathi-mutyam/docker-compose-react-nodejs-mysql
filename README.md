@@ -30,19 +30,27 @@ docker compose version
 output will be docker Compose version v5.1.0
 
 git clone https://github.com/harathi-mutyam/docker-compose-react-nodejs-mysql.git
+
 ls
+
 cd docker-compose-react-nodejs-mysql
+
 ls
+
 vim .env
+
 replace EC2_PUBLIC_IP=51.20.4.150 with your ec2-instance-public-ip
 and also replace at #CLIENT_ORIGIN=http://YOUR_PUBLIC_IP
 
 CLIENT_ORIGIN=http://51.20.4.150
 CLIENT_API_BASE_URL=http://51.20.4.150:3500/api
  in the above lines also
+ 
 :wq!   #save the file
 
 ubuntu@ip-172-31-39-109:~/docker-compose-react-nodejs-mysql$ vim docker-compose.yml
+
+
 services:
   mysqldb:
     image: mysql:5.7
@@ -98,6 +106,8 @@ volumes:
 networks:
   backend:
   frontend:
+
+
 
 check this one also same content is available in docker-compose.yml file after git clone 
 docker compose up --build -d
