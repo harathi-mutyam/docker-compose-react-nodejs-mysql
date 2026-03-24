@@ -14,7 +14,7 @@ RUN npm run build
 # Stage 2
 FROM nginx:1.17.0-alpine
 
-COPY --from=build-stage /bezkoder-ui/build /usr/share/nginx/html
+COPY --from=build-stage /booksui/build /usr/share/nginx/html
 EXPOSE $REACT_DOCKER_PORT
 
 CMD nginx -g 'daemon off;'
