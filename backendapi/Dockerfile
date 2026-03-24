@@ -1,6 +1,6 @@
 FROM node:14
 
-WORKDIR /booksapi
+WORKDIR /backendapi
 COPY package.json .
 RUN npm install
 COPY . .

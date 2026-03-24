@@ -1,7 +1,7 @@
 # Stage 1
 FROM node:14 as build-stage
 
-WORKDIR /booksui
+WORKDIR /frontendui
 COPY package.json .
 RUN npm install
 COPY . .
@@ -14,7 +14,11 @@ RUN npm run build
 # Stage 2
 FROM nginx:1.17.0-alpine
 
-COPY --from=build-stage /booksui/build /usr/share/nginx/html
+<<<<<<< HEAD:booksui/Dockerfile
+COPY --from=build-stage /frontendui/build /usr/share/nginx/html
+=======
+COPY --from=build-stage /frontendui/build /usr/share/nginx/html
+>>>>>>> dbc8053 (Renamed subfolders for clarity):frontendui/Dockerfile
 EXPOSE $REACT_DOCKER_PORT
 
 CMD nginx -g 'daemon off;'

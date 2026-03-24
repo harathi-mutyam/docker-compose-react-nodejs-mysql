@@ -14,10 +14,10 @@ services:
     networks:
       - backend
 
-  booksapi:
+  backendapi:
     depends_on:
       - mysqldb
-    build: ./booksapi
+    build: ./backendapi
     restart: unless-stopped
     env_file: ./.env
     ports:
@@ -34,11 +34,11 @@ services:
       - backend
       - frontend
 
-  booksui:
+  frontendui:
     depends_on:
-      - booksapi
+      - backendapi
     build:
-      context: ./booksui
+      context: ./frontendui
       args:
         - REACT_APP_API_BASE_URL=$CLIENT_API_BASE_URL
     ports:
