@@ -14,10 +14,10 @@ services:
     networks:
       - backend
 
-  bezkoder-api:
+  booksapi:
     depends_on:
       - mysqldb
-    build: ./bezkoder-api
+    build: ./booksapi
     restart: unless-stopped
     env_file: ./.env
     ports:
@@ -34,11 +34,11 @@ services:
       - backend
       - frontend
 
-  bezkoder-ui:
+  booksui:
     depends_on:
-      - bezkoder-api
+      - booksapi
     build:
-      context: ./bezkoder-ui
+      context: ./booksui
       args:
         - REACT_APP_API_BASE_URL=$CLIENT_API_BASE_URL
     ports:
