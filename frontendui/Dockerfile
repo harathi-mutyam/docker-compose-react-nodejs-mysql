@@ -14,11 +14,8 @@ RUN npm run build
 # Stage 2
 FROM nginx:1.17.0-alpine
 
-<<<<<<< HEAD:booksui/Dockerfile
 COPY --from=build-stage /frontendui/build /usr/share/nginx/html
-=======
-COPY --from=build-stage /frontendui/build /usr/share/nginx/html
->>>>>>> dbc8053 (Renamed subfolders for clarity):frontendui/Dockerfile
+
 EXPOSE $REACT_DOCKER_PORT
 
 CMD nginx -g 'daemon off;'
