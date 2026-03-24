@@ -14,7 +14,7 @@ services:
     networks:
       - backend
 
-  bezkoder-api:
+  booksapi:
     depends_on:
       - mysqldb
     build: ./bezkoder-api
@@ -34,9 +34,9 @@ services:
       - backend
       - frontend
 
-  bezkoder-ui:
+  booksui:
     depends_on:
-      - bezkoder-api
+      - booksapi
     build:
       context: ./bezkoder-ui
       args:
