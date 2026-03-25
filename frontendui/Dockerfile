@@ -15,10 +15,6 @@ RUN npm run build
 FROM nginx:1.17.0-alpine
 
 COPY --from=build-stage /frontendui/build /usr/share/nginx/html
-<<<<<<< HEAD
-
-=======
->>>>>>> 84e2076 (Update Dockerfile for frontend UI)
 EXPOSE $REACT_DOCKER_PORT
 
 CMD nginx -g 'daemon off;'
