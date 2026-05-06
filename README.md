@@ -57,57 +57,102 @@ ubuntu@ip-172-31-39-109:~/docker-compose-react-nodejs-mysql$ vim docker-compose.
 services:
   mysqldb:
     image: mysql:5.7
+    
     restart: unless-stopped
+    
     env_file: ./.env
+    
     environment:
+    
       - MYSQL_ROOT_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      
       - MYSQL_DATABASE=$MYSQLDB_DATABASE
+      
     ports:
+    
       #- "3306:3306"       # mapped to standard MySQL port
+      
        - "${MYSQLDB_LOCAL_PORT}:${MYSQLDB_DOCKER_PORT}"
+       
     volumes:
+    
       - db:/var/lib/mysql
+      
     networks:
+    
       - backend
 
   bezkoder-api:
+  
     depends_on:
+    
       - mysqldb
+      
     build: ./bezkoder-api
+    
     restart: unless-stopped
+    
     env_file: ./.env
+    
     ports:
+    
       #- "3500:8080"       # backend accessible on 3500
+      
        - "${NODE_LOCAL_PORT}:${NODE_DOCKER_PORT}"
+       
     environment:
+    
       - DB_HOST=mysqldb
+      
       - DB_USER=$MYSQLDB_USER
+      
       - DB_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      
       - DB_NAME=$MYSQLDB_DATABASE
+      
       - DB_PORT=3306
+      
       - CLIENT_ORIGIN=$CLIENT_ORIGIN
+      
     networks:
+    
       - backend
+      
       - frontend
+      
 
   bezkoder-ui:
+  
     depends_on:
+    
       - bezkoder-api
+      
     build:
+    
       context: ./bezkoder-ui
+      
       args:
+      
         - REACT_APP_API_BASE_URL=$CLIENT_API_BASE_URL
+        
     ports:
+    
       #- "80:80"           # frontend accessible on port 80
+      
        - "${REACT_LOCAL_PORT}:${REACT_DOCKER_PORT}"
+       
     networks:
+    
       - frontend
 
 volumes:
+
   db:
 
 networks:
+
   backend:
+  
   frontend:
 
 
