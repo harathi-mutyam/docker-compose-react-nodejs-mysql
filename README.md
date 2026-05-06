@@ -129,6 +129,6 @@ check it again in internet explorer
 
  docker compose down
  
- 
+ Voting APP clone repository and explanation available in Docker Compose Presentation notes
 
 
