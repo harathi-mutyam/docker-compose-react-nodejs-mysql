@@ -40,10 +40,13 @@ ls
 vim .env
 
 replace EC2_PUBLIC_IP=51.20.4.150 with your ec2-instance-public-ip
+
 and also replace at #CLIENT_ORIGIN=http://YOUR_PUBLIC_IP
 
 CLIENT_ORIGIN=http://51.20.4.150
+
 CLIENT_API_BASE_URL=http://51.20.4.150:3500/api
+
  in the above lines also
  
 :wq!   #save the file
