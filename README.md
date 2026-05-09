@@ -157,14 +157,19 @@ networks:
 
 
 
-check this one also same content is available in docker-compose.yml file after git clone 
+check this one also same content is available in docker-compose.yml file after git clone
+
 docker compose up --build -d
 
 check it in browser with 
+
 ec2-publicip:80
+
 try to add books
 
-if not added down the docker compose once again up it
+if not added down the docker compose once again up it .Because the database server is not 
+
+Readey at the time of Testing in browser.
 
 docker compose down
 
