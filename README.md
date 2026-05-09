@@ -1,5 +1,6 @@
-Create ec2 instance
+**Create ec2 instance**
 
+```bash
 ssh -i your-key.pem ubuntu@YOUR_PUBLIC_IP
 
 sudo apt update && sudo apt upgrade -y
@@ -36,6 +37,7 @@ ls
 cd docker-compose-react-nodejs-mysql
 
 ls
+```
 
 vim .env
 
