@@ -1,3 +1,5 @@
+# steps to follow to run the project
+
 **Create ec2 instance**
 
 ```bash
