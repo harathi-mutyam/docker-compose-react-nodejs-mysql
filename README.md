@@ -53,7 +53,7 @@ CLIENT_API_BASE_URL=http://51.20.4.150:3500/api
 
 ubuntu@ip-172-31-39-109:~/docker-compose-react-nodejs-mysql$ vim docker-compose.yml
 
-
+```bash
 services:
   mysqldb:
     image: mysql:5.7
@@ -155,7 +155,7 @@ networks:
   
   frontend:
 
-
+'''
 
 check this one also same content is available in docker-compose.yml file after git clone
 
